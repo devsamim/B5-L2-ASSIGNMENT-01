@@ -1,4 +1,5 @@
-
+{
+  
 
 function formatString(input: string, toUpper?: boolean):string {
   if(toUpper === false){
@@ -126,14 +127,16 @@ function formatString(input: string, toUpper?: boolean):string {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         if (n < 0) {
-          reject(new Error("Negative number not allowed"));
+          reject(new Error("Negative number not allowed")); 
         } else {
           resolve(n * n);
         }
-      }, 1000);
+      }, 1000); 
     });
   }
-  squareAsync(4).then(console.log);        
-  squareAsync(-3).catch(console.error); 
+  squareAsync(4).then(console.log);
+  squareAsync(-3).catch(console.error);  
   
   
+  
+}

@@ -58,121 +58,123 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     }
     return to.concat(ar || Array.prototype.slice.call(from));
 };
-function formatString(input, toUpper) {
-    if (toUpper === false) {
-        return input.toLowerCase();
-    }
-    else {
-        return input.toUpperCase();
-    }
-}
-formatString('Hello');
-console.log(formatString('hello', true));
-console.log(formatString('hello', false));
-function filterByRating(items) {
-    return items.filter(function (item) { return item.rating >= 4; });
-}
-var books = [
-    { title: "Book A", rating: 4.5 },
-    { title: "Book B", rating: 3.2 },
-    { title: "Book C", rating: 5.0 }
-];
-var highRatingBooks = filterByRating(books);
-console.log(highRatingBooks);
-function concatenateArrays() {
-    var arrays = [];
-    for (var _i = 0; _i < arguments.length; _i++) {
-        arrays[_i] = arguments[_i];
-    }
-    return arrays.reduce(function (merged, currentArr) { return __spreadArray(__spreadArray([], merged, true), currentArr, true); }, []);
-}
-console.log(concatenateArrays(["a", "b"], ["c"]));
-console.log(concatenateArrays([1, 2], [3, 4], [5]));
-var Vehicle = /** @class */ (function () {
-    function Vehicle(make, year) {
-        this.make = make;
-        this.year = year;
-    }
-    Vehicle.prototype.getInfo = function () {
-        return "Make: ".concat(this.make, ", Year: ").concat(this.year);
-    };
-    return Vehicle;
-}());
-var Car = /** @class */ (function (_super) {
-    __extends(Car, _super);
-    function Car(make, year, model) {
-        var _this = _super.call(this, make, year) || this;
-        _this.model = model;
-        return _this;
-    }
-    Car.prototype.getModel = function () {
-        return "Model: ".concat(this.model);
-    };
-    return Car;
-}(Vehicle));
-var myCar = new Car("Toyota", 2020, "Corolla");
-console.log(myCar.getInfo()); // Output: "Make: Toyota, Year: 2020"
-console.log(myCar.getModel()); // Output: "Model: Corolla"
-function processValue(value) {
-    if (typeof value === 'string') {
-        return value.length;
-    }
-    else {
-        return value * 2;
-    }
-}
-console.log(processValue("hello"));
-console.log(processValue(10));
-var products = [
-    { name: "Pen", price: 10 },
-    { name: "Notebook", price: 25 },
-    { name: "Bag", price: 50 }
-];
-function getMostExpensiveProduct(products) {
-    if (products.length === 0) {
-        return null;
-    }
-    var mostExpensive = products[0];
-    for (var _i = 0, products_1 = products; _i < products_1.length; _i++) {
-        var product = products_1[_i];
-        if (product.price > mostExpensive.price) {
-            mostExpensive = product;
+{
+    function formatString(input, toUpper) {
+        if (toUpper === false) {
+            return input.toLowerCase();
+        }
+        else {
+            return input.toUpperCase();
         }
     }
-    return mostExpensive;
-}
-var result = getMostExpensiveProduct(products);
-console.log(result);
-var Day;
-(function (Day) {
-    Day[Day["Monday"] = 0] = "Monday";
-    Day[Day["Tuesday"] = 1] = "Tuesday";
-    Day[Day["Wednesday"] = 2] = "Wednesday";
-    Day[Day["Thursday"] = 3] = "Thursday";
-    Day[Day["Friday"] = 4] = "Friday";
-    Day[Day["Saturday"] = 5] = "Saturday";
-    Day[Day["Sunday"] = 6] = "Sunday";
-})(Day || (Day = {}));
-function getDayType(day) {
-    return day === Day.Saturday || day === Day.Sunday ? "Weekend" : "Weekday";
-}
-console.log(getDayType(Day.Monday));
-console.log(getDayType(Day.Sunday));
-function squareAsync(n) {
-    return __awaiter(this, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            return [2 /*return*/, new Promise(function (resolve, reject) {
-                    setTimeout(function () {
-                        if (n < 0) {
-                            reject(new Error("Negative number not allowed"));
-                        }
-                        else {
-                            resolve(n * n);
-                        }
-                    }, 1000);
-                })];
+    formatString('Hello');
+    console.log(formatString('hello', true));
+    console.log(formatString('hello', false));
+    function filterByRating(items) {
+        return items.filter(function (item) { return item.rating >= 4; });
+    }
+    var books = [
+        { title: "Book A", rating: 4.5 },
+        { title: "Book B", rating: 3.2 },
+        { title: "Book C", rating: 5.0 }
+    ];
+    var highRatingBooks = filterByRating(books);
+    console.log(highRatingBooks);
+    function concatenateArrays() {
+        var arrays = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            arrays[_i] = arguments[_i];
+        }
+        return arrays.reduce(function (merged, currentArr) { return __spreadArray(__spreadArray([], merged, true), currentArr, true); }, []);
+    }
+    console.log(concatenateArrays(["a", "b"], ["c"]));
+    console.log(concatenateArrays([1, 2], [3, 4], [5]));
+    var Vehicle = /** @class */ (function () {
+        function Vehicle(make, year) {
+            this.make = make;
+            this.year = year;
+        }
+        Vehicle.prototype.getInfo = function () {
+            return "Make: ".concat(this.make, ", Year: ").concat(this.year);
+        };
+        return Vehicle;
+    }());
+    var Car = /** @class */ (function (_super) {
+        __extends(Car, _super);
+        function Car(make, year, model) {
+            var _this = _super.call(this, make, year) || this;
+            _this.model = model;
+            return _this;
+        }
+        Car.prototype.getModel = function () {
+            return "Model: ".concat(this.model);
+        };
+        return Car;
+    }(Vehicle));
+    var myCar = new Car("Toyota", 2020, "Corolla");
+    console.log(myCar.getInfo()); // Output: "Make: Toyota, Year: 2020"
+    console.log(myCar.getModel()); // Output: "Model: Corolla"
+    function processValue(value) {
+        if (typeof value === 'string') {
+            return value.length;
+        }
+        else {
+            return value * 2;
+        }
+    }
+    console.log(processValue("hello"));
+    console.log(processValue(10));
+    var products = [
+        { name: "Pen", price: 10 },
+        { name: "Notebook", price: 25 },
+        { name: "Bag", price: 50 }
+    ];
+    function getMostExpensiveProduct(products) {
+        if (products.length === 0) {
+            return null;
+        }
+        var mostExpensive = products[0];
+        for (var _i = 0, products_1 = products; _i < products_1.length; _i++) {
+            var product = products_1[_i];
+            if (product.price > mostExpensive.price) {
+                mostExpensive = product;
+            }
+        }
+        return mostExpensive;
+    }
+    var result = getMostExpensiveProduct(products);
+    console.log(result);
+    var Day = void 0;
+    (function (Day) {
+        Day[Day["Monday"] = 0] = "Monday";
+        Day[Day["Tuesday"] = 1] = "Tuesday";
+        Day[Day["Wednesday"] = 2] = "Wednesday";
+        Day[Day["Thursday"] = 3] = "Thursday";
+        Day[Day["Friday"] = 4] = "Friday";
+        Day[Day["Saturday"] = 5] = "Saturday";
+        Day[Day["Sunday"] = 6] = "Sunday";
+    })(Day || (Day = {}));
+    function getDayType(day) {
+        return day === Day.Saturday || day === Day.Sunday ? "Weekend" : "Weekday";
+    }
+    console.log(getDayType(Day.Monday));
+    console.log(getDayType(Day.Sunday));
+    function squareAsync(n) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, new Promise(function (resolve, reject) {
+                        setTimeout(function () {
+                            if (n < 0) {
+                                reject(new Error("Negative number not allowed"));
+                            }
+                            else {
+                                resolve(n * n);
+                            }
+                        }, 1000);
+                    })];
+            });
         });
-    });
+    }
+    squareAsync(4).then(console.log);
+    squareAsync(-3).catch(console.error);
 }
-squareAsync(4).then(console.log);
-squareAsync(-3).catch(console.error);
